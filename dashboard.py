@@ -11,7 +11,7 @@ employee_data = pd.read_csv('employee_data.csv')
 
 # --- Header & Logo ---
 img = Image.open("syk.jpg")
-st.image(img, use_container_width=True)
+st.image(img, width=True)
 
 """
 # Dashboard de Análisis de Desempeño
@@ -75,7 +75,7 @@ with c1:
                             title="Histograma del Desempeño",
                             color_discrete_sequence=['#636EFA'])
     fig_hist.update_layout(bargap=0.2)
-    st.plotly_chart(fig_hist, use_container_width=True)
+    st.plotly_chart(fig_hist, width=True)
 
 with c2:
 #     st.subheader("Promedio de Horas por Género")
@@ -85,7 +85,7 @@ with c2:
                         title="Horas Promedio trabajadas",
                         color="gender", 
                         text_auto='.2f')
-    st.plotly_chart(fig_bar, use_container_width=True)
+    st.plotly_chart(fig_bar, width=True)
 
 # Segunda Fila
 c3, c4 = st.columns(2)
@@ -96,7 +96,7 @@ with c3:
                                         color="gender", 
                                         title="Dispersión: Edad vs Salario",
                                         hover_data=['name_employee', 'position'])
-    st.plotly_chart(fig_scatter_age_salary, use_container_width=True)
+    st.plotly_chart(fig_scatter_age_salary, width=True)
 
 with c4:
 #     st.subheader("Horas vs Desempeño")
@@ -105,7 +105,7 @@ with c4:
                                         title="Relación: Horas Trabajadas vs Desempeño",
                                         size='salary', # Agregamos dimensión extra visual
                                         hover_data=['name_employee'])
-    st.plotly_chart(fig_scatter_perf_hours, use_container_width=True)
+    st.plotly_chart(fig_scatter_perf_hours, width=True)
 
     
 # --- Conclusión ---
